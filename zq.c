@@ -2,9 +2,6 @@
 
 int main(int argc, const char *argv[])
 {
-    for (i = 0; i < count; i++) 
-    {
-        /* code */
-    }
+    printf("hello\n");
     return 0;
 }
