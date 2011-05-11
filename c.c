@@ -1,19 +1,21 @@
+
 #include <stdio.h>
 
 int main(int argc, const char *argv[])
 {
-    char str[20]="This is a C world!";
-    char *p =str;
-    printf("%s\n",str);
-    getchar();
-
-
-    while (*p !='\0') p++; 
-    
-    for(p--; p !=(str-1);p--)
+    int a= -20;
+    unsigned int b=10;
+    if(a<b)
     {
-       putchar(*p);         
+      printf("hello\n");    
     }
-    putchar('\n');
-    return 0;   
+    else if(a==b)
+    {
+      printf("equal\n");
+    }
+    else
+    {
+     printf("world\n");
+    }
+    return 0;
 }

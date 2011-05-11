@@ -1,24 +1,40 @@
 #include <stdio.h>
+#include <string.h>
+
+int find_word(char *s,char *w);
 
 int main(int argc, const char *argv[])
 {
-    char str[20] = "This is a C world!";
-    char c_str[20];
-    char *p = str;
-    char *p_c = c_str;
-    printf("%s\n",str);
-    getchar();
-    
-    for (p =str; *p !='\0'; p++) 
-    {   
-        if(*p !=' ')
-        {
-           *p_c =*p;
-            p_c++;
-        }
+    char str[100]="This is a wonderful game !";
+    char s[100]="is";
+    int num=find_word(str,s);
+    if (num < 0) 
+    {
+        printf("No such word\n");
     }
-    *p_c = '\0';
+    else
+    {
+        printf("%d\n",num);
+        printf("press enter to test..\n");
+        getchar();
+        printf("%s\n",str+num);
+    }
 
-     printf("%s\n",c_str);
-     return 0;
+    return 0;
 }
+int find_word(char *s, char *w)
+{
+    int i = 0;
+
+    while (s[i] !='\0') 
+    {
+        if (strncmp(s+i,w,strlen(w)) == 0) 
+        {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+
+}
+
